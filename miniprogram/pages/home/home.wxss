@@ -1,0 +1,33 @@
+.header {
+  padding: 20rpx 32rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.content {
+  flex: 1;
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+  height: calc(100vh - 100rpx - env(safe-area-inset-bottom));
+}
+
+.loading-dots {
+  padding: 20rpx 0;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #888;
+  margin-left: 16rpx;
+} 

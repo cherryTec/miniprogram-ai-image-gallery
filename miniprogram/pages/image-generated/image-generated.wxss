@@ -1,0 +1,50 @@
+.image-preview-container {
+  padding-top: 20rpx;
+  padding-bottom: 60rpx;
+}
+
+.image-card {
+  margin-bottom: 32rpx;
+  overflow: hidden;
+}
+
+.generated-image {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.section {
+  margin-bottom: 32rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.prompt-box {
+  background-color: rgba(0, 82, 217, 0.05);
+  border-left: 6rpx solid var(--primary-color);
+  padding: 24rpx;
+  border-radius: 0 8rpx 8rpx 0;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24rpx;
+  margin-bottom: 32rpx;
+}
+
+.additional-actions {
+  margin-bottom: 32rpx;
+}
+
+.action-btn {
+  margin-bottom: 0;
+} 

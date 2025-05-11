@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="create-form page-container">
+    <!-- Prompt Input -->
+    <view class="form-group">
+      <text class="form-label">描述你想要的图片 (提示词)</text>
+      <t-textarea value="{{prompt}}" placeholder="试试描述：主角 + 在哪里 + 做什么 + 像什么风格？例如：一个女孩在森林中读书，梦幻般的光斑，宫崎骏风格" autosize maxlength="200" indicator bind:change="onPromptChange" class="form-textarea"></t-textarea>
+    </view>
+
+    <!-- Negative Prompts (Optional) -->
+    <view class="form-group">
+      <view class="form-label-row">
+        <text class="form-label">不要出现的内容（可选）</text>
+        <text class="toggle-text" bindtap="toggleNegativePrompt">{{showNegativePrompt ? '收起' : '展开'}} {{showNegativePrompt ? '▲' : '▼'}}</text>
+      </view>
+      
+      <view wx:if="{{showNegativePrompt}}">
+        <t-input value="{{negativePrompt}}" placeholder="例如：模糊, 低质量, 文字, 变形" bind:change="onNegativePromptChange"></t-input>
+      </view>
+    </view>
+
+    <!-- Style Tags -->
+    <view class="form-group">
+      <text class="form-label">常用风格词</text>
+      <view class="tags-container">
+        <t-tag class="style-tag" wx:for="{{styleTags}}" wx:key="index" variant="light" bindtap="addStyleTag" data-tag="{{item}}">{{item}}</t-tag>
+      </view>
+    </view>
+
+    <!-- Example Prompts -->
+    <view class="form-group">
+      <text class="form-label">灵感提示</text>
+      <view class="example-prompts">
+        <view class="example-prompt" wx:for="{{examplePrompts}}" wx:key="index" bindtap="useExamplePrompt" data-prompt="{{item}}">
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Generate Button -->
+    <t-button theme="primary" size="large" block loading="{{generating}}" disabled="{{!prompt || generating}}" bind:tap="generateImage">生成图片</t-button>
+  </view>
+</view>
+
+<!-- Toast Component -->
+<t-toast id="t-toast"></t-toast> 

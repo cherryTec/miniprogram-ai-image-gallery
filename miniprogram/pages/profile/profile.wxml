@@ -1,0 +1,80 @@
+<view class="container">
+  <!-- Not logged in state -->
+  <block wx:if="{{!isLoggedIn}}">
+    <view class="login-container flex-center">
+      <view class="card login-card">
+        <view class="avatar-placeholder flex-center">
+          <t-icon name="user" size="96rpx" color="#ccc"></t-icon>
+        </view>
+        
+        <view class="welcome-text">
+          <view class="text-center mb-sm">欢迎来到 AI 画廊</view>
+          <view class="text-secondary text-center mb-lg">登录后即可使用所有功能，创建和分享你的 AI 画作</view>
+        </view>
+        
+        <t-button theme="primary" block size="large" open-type="getUserInfo" bindgetuserinfo="onLogin" variant="base" icon="logo-wechat">微信一键登录</t-button>
+      </view>
+    </view>
+  </block>
+  
+  <!-- Logged in state -->
+  <block wx:else>
+    <!-- User Info -->
+    <view class="user-info card">
+      <t-avatar image="{{userInfo.avatarUrl}}" size="large"></t-avatar>
+      <view class="user-details">
+        <view class="username">{{userInfo.nickName}}</view>
+        <view class="text-secondary">欢迎来到 AI 画廊！</view>
+      </view>
+    </view>
+
+    <!-- Personal Gallery Section -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">个人画廊</text>
+        <t-divider></t-divider>
+      </view>
+
+      <view class="image-grid" wx:if="{{userImages.length > 0}}">
+        <view class="image-item" wx:for="{{userImages}}" wx:key="id">
+          <image src="{{item.imageUrl}}" mode="widthFix" lazy-load="{{true}}" bindtap="previewImage" data-url="{{item.imageUrl}}"></image>
+          <view class="image-caption">{{item.prompt}}</view>
+        </view>
+      </view>
+      
+      <view class="empty-gallery flex-center" wx:else>
+        <view class="text-center">
+          <t-icon name="image" size="96rpx" color="#ccc"></t-icon>
+          <view class="text-secondary mt-md">你还没有创建任何图片</view>
+          <t-button class="mt-md" size="small" theme="primary" bindtap="navigateToCreate">创建第一张图片</t-button>
+        </view>
+      </view>
+    </view>
+
+    <!-- Settings Section -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">设置</text>
+        <t-divider></t-divider>
+      </view>
+
+      <view class="settings-list">
+        <t-cell title="通知设置" hover arrow />
+        <t-cell title="隐私政策" hover arrow />
+        <t-cell title="关于我们" hover arrow />
+        <t-cell title="退出登录" hover bind:click="onLogout" />
+      </view>
+    </view>
+  </block>
+
+  <!-- Create Image Floating Button -->
+  <view class="float-btn flex-center" bindtap="navigateToCreate" wx:if="{{isLoggedIn}}">
+    <t-icon name="add" size="48rpx" color="#fff"></t-icon>
+  </view>
+</view>
+
+<!-- Toast Component -->
+<t-toast id="t-toast"></t-toast>
+
+<!-- Dialog Component -->
+<t-dialog id="t-dialog"></t-dialog> 

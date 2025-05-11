@@ -1,0 +1,30 @@
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <text class="title">AI 画廊</text>
+  </view>
+
+  <!-- Main Content with Gallery Layout -->
+  <scroll-view class="content" scroll-y="{{true}}" bindscrolltolower="onReachBottom">
+    <view class="image-grid">
+      <view class="image-item" wx:for="{{images}}" wx:key="id">
+        <image src="{{item.imageUrl}}" mode="widthFix" lazy-load="{{true}}" bindtap="previewImage" data-url="{{item.imageUrl}}"></image>
+        <view class="image-caption">{{item.prompt}}</view>
+      </view>
+    </view>
+    
+    <!-- Loading indicator -->
+    <view class="loading-dots" wx:if="{{loading}}">
+      <t-loading theme="dots" size="40rpx"></t-loading>
+      <text class="loading-text">加载更多...</text>
+    </view>
+  </scroll-view>
+
+  <!-- Create Image Floating Button -->
+  <view class="float-btn flex-center" bindtap="navigateToCreate">
+    <t-icon name="add" size="48rpx" color="#fff"></t-icon>
+  </view>
+</view>
+
+<!-- Toast Component -->
+<t-toast id="t-toast"></t-toast> 
