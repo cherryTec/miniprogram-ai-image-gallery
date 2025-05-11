@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - AI Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .tdesign-style {
+            --primary-color: #0052d9;
+            --loading-color: #0052d9;
+        }
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            margin: 0 5px;
+            background-color: var(--loading-color);
+            border-radius: 50%;
+            display: inline-block;
+            animation: loading 1.4s infinite ease-in-out both;
+        }
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes loading {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+        .bottom-tab {
+            height: 56px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .tab-active {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body class="tdesign-style flex flex-col h-screen">
+    <!-- Header -->
+    <header class="bg-white p-4 shadow-sm">
+        <h1 class="text-xl font-medium text-center">AI 画廊</h1>
+    </header>
+
+    <!-- Main Content with Masonry Layout -->
+    <main class="flex-grow overflow-y-auto p-2">
+        <div class="grid grid-cols-2 gap-2">
+            <!-- Image Items -->
+            <div class="mb-2">
+                <div class="relative rounded-lg overflow-hidden shadow">
+                    <img src="https://picsum.photos/400/400?random=1" alt="AI Generated Art" class="w-full h-auto">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                        夕阳下的城市剪影，电影风格
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="relative rounded-lg overflow-hidden shadow">
+                    <img src="https://picsum.photos/400/600?random=2" alt="AI Generated Art" class="w-full h-auto">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                        梦幻森林中的小屋，动漫风格
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="relative rounded-lg overflow-hidden shadow">
+                    <img src="https://picsum.photos/400/500?random=3" alt="AI Generated Art" class="w-full h-auto">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                        霓虹灯下的未来都市，赛博朋克风格
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="relative rounded-lg overflow-hidden shadow">
+                    <img src="https://picsum.photos/400/400?random=4" alt="AI Generated Art" class="w-full h-auto">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                        沙漠中的绿洲，写实风格
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="relative rounded-lg overflow-hidden shadow">
+                    <img src="https://picsum.photos/400/450?random=5" alt="AI Generated Art" class="w-full h-auto">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                        浮在半空中的岛屿，魔幻风格
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div class="relative rounded-lg overflow-hidden shadow">
+                    <img src="https://picsum.photos/400/550?random=6" alt="AI Generated Art" class="w-full h-auto">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                        宇宙星云中的太空船，科幻风格
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading indicator -->
+            <div class="col-span-2 py-4 flex justify-center items-center">
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <span class="ml-2 text-gray-500">加载更多...</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Tab -->
+    <nav class="bottom-tab bg-white flex">
+        <div class="tab-item tab-active">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+            <span>首页</span>
+        </div>
+        <div class="tab-item text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>我的</span>
+        </div>
+    </nav>
+
+    <!-- Floating Create Button -->
+    <button class="fixed right-4 bottom-20 w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+    </button>
+</body>
+</html> 

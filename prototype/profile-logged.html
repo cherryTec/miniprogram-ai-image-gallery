@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Logged In</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .tdesign-style {
+            --primary-color: #0052d9;
+        }
+        .bottom-tab {
+            height: 56px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .tab-active {
+            color: var(--primary-color);
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .section-title:after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            margin-left: 12px;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body class="tdesign-style flex flex-col h-screen">
+    <!-- Header -->
+    <header class="bg-white p-4 shadow-sm">
+        <h1 class="text-xl font-medium text-center">我的</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow overflow-y-auto">
+        <!-- User Info -->
+        <div class="bg-white p-4 shadow-sm flex items-center">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar" class="avatar mr-4">
+            <div>
+                <h2 class="text-lg font-medium">用户昵称</h2>
+                <p class="text-gray-500 text-sm">欢迎来到 AI 画廊！</p>
+            </div>
+        </div>
+
+        <!-- Personal Gallery Section -->
+        <div class="p-4">
+            <div class="section-title">
+                <h3 class="text-base font-medium">个人画廊</h3>
+            </div>
+
+            <!-- Grid of user's images -->
+            <div class="grid grid-cols-2 gap-2">
+                <div class="mb-2">
+                    <div class="relative rounded-lg overflow-hidden shadow">
+                        <img src="https://picsum.photos/400/400?random=11" alt="AI Generated Art" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                            水晶城堡与飞龙，奇幻风格
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="relative rounded-lg overflow-hidden shadow">
+                        <img src="https://picsum.photos/400/500?random=12" alt="AI Generated Art" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                            海底城市与人鱼，写实风格
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="relative rounded-lg overflow-hidden shadow">
+                        <img src="https://picsum.photos/400/450?random=13" alt="AI Generated Art" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                            未来实验室，科技感
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="relative rounded-lg overflow-hidden shadow">
+                        <img src="https://picsum.photos/400/480?random=14" alt="AI Generated Art" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm">
+                            古代东方宫殿，金色装饰
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="p-4 mt-2">
+            <div class="section-title">
+                <h3 class="text-base font-medium">设置</h3>
+            </div>
+
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="p-4 border-b border-gray-100 flex items-center justify-between">
+                    <span>通知设置</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="p-4 border-b border-gray-100 flex items-center justify-between">
+                    <span>隐私政策</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="p-4 flex items-center justify-between">
+                    <span>关于我们</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Tab -->
+    <nav class="bottom-tab bg-white flex">
+        <div class="tab-item text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+            <span>首页</span>
+        </div>
+        <div class="tab-item tab-active">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>我的</span>
+        </div>
+    </nav>
+
+    <!-- Floating Create Button -->
+    <button class="fixed right-4 bottom-20 w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+    </button>
+</body>
+</html> 
